@@ -1,0 +1,12 @@
+{
+  "@@locale": "uk",
+    "versionB": "Версія",
+    "logInGreeting": "Вітаю тебе!\nЛаскаво просимо до неофіційного додатку opennz.",
+    "logInGreetingDescription": "Перевіряй свої оцінки та будь завжди в курсі успіхів у навчанні.",
+    "textfieldLogin": "Логін",
+    "textfieldPassword": "Пароль",
+    "errorTextfieldsIsEmpty": "Поле вводу логіну або паролю пусті.",
+    "errorAuthUserNotFinded": "Введено невірний логін або пароль.",
+    "errorOccurred": "Сталася помилка!",
+    "logInButton": "Увійти"
+}

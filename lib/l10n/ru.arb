@@ -1,0 +1,12 @@
+{
+  "@@locale": "ru",
+    "versionB": "Версия",
+    "logInGreeting": "Приветствую тебя!\nДобро пожаловать в неофициальное приложение opennz.",
+    "logInGreetingDescription": "Проверяй свои оценки и будь всегда в курсе успехов в обучении.",
+    "textfieldLogin": "Логин",
+    "textfieldPassword": "Пароль",
+    "errorTextfieldsIsEmpty": "Поле ввода логина или пароля пусты.",
+    "errorAuthUserNotFinded": "Введен неверный логин или пароль.",
+    "errorOccurred": "Произошла ошибка!",
+    "logInButton": "Войти"
+}
