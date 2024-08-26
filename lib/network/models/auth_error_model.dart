@@ -1,6 +1,6 @@
 // To parse this JSON data, do
 //
-//     final authErrorModel = authErrorModelFromJson(jsonString);
+//     final AuthErrorModel = AuthErrorModelFromJson(jsonString);
 
 import 'dart:convert';
 

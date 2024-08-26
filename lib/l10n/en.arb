@@ -8,5 +8,9 @@
     "errorTextfieldsIsEmpty": "Login or password input fields are empty.",
     "errorAuthUserNotFinded": "Incorrect login or password entered.",
     "errorOccurred": "An error occurred!",
-    "logInButton": "Log In"
+    "logInButton": "Log In",
+    "diary": "Diary",
+    "marks": "Marks",
+    "schedule": "Schedule",
+    "project": "Project"
 }

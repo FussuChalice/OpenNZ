@@ -1,3 +1,4 @@
+import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -17,8 +18,8 @@ class SplashScreen extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(25),
+          child: ClipSmoothRect(
+            radius: SmoothBorderRadius(cornerRadius: 25, cornerSmoothing: 1),
             child: Image.asset(
               "assets/app_icon.png",
               width: 100,

@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget {
                       color: ApplicationColors.black,
                     ),
                     IconButton(
-                      onPressed: onCodeBtnPress,
+                      onPressed: onSettingsBtnPress,
                       icon: const Icon(Icons.settings_outlined),
                       color: ApplicationColors.black,
                     )

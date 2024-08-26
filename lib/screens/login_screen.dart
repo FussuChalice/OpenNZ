@@ -3,7 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:opennz_ua/colors.dart';
 import 'package:opennz_ua/consts.dart';
 import 'package:opennz_ua/network.dart';
-import 'package:opennz_ua/network/services/auth_service.dart';
 import 'package:opennz_ua/screens.dart';
 import 'package:opennz_ua/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -157,7 +156,10 @@ class _LogInScreenState extends State<LogInScreen> {
                           data.fold(
                             (user) async {
                               var box = await Hive.openBox("auth_data");
-                              box.put("credentials", credentials.toString());
+                              box.put(
+                                  "credentials",
+                                  authByPasswordCredentialModelToJson(
+                                      credentials));
 
                               if (context.mounted) {
                                 Navigator.push(

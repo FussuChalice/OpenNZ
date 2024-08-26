@@ -8,5 +8,9 @@
     "errorTextfieldsIsEmpty": "Поле ввода логина или пароля пусты.",
     "errorAuthUserNotFinded": "Введен неверный логин или пароль.",
     "errorOccurred": "Произошла ошибка!",
-    "logInButton": "Войти"
+    "logInButton": "Войти",
+    "diary": "Дневник",
+    "marks": "Оценки",
+    "schedule": "Расписание",
+    "project": "Проект"
 }
