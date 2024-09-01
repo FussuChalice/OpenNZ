@@ -26,12 +26,8 @@ class _LogInScreenState extends State<LogInScreen> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment(0.03, -1.00),
-            end: Alignment(-0.03, 1),
-            colors: [Color(0xFFAABBC3), Color(0xFFDD8D9E), Color(0xFFA28CBA)],
-          ),
+        decoration: BoxDecoration(
+          gradient: ApplicationColors.backgroundGradient,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -162,7 +158,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                       credentials));
 
                               if (context.mounted) {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => const HomeScreen(),

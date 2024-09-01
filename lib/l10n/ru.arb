@@ -12,5 +12,12 @@
     "diary": "Дневник",
     "marks": "Оценки",
     "schedule": "Расписание",
-    "project": "Проект"
+    "project": "Проект",
+    "ooops": "Ууупс!",
+    "noInternetConnectionDesc": "Нет подключения к интернету\nПроверьте подключение",
+    "tryAgain": "Попробовать заново",
+    "diaryIsEmpty": "На этой неделе в\n дневнике нет записей.",
+    "hometask": "Домашнее задание",
+    "buttonCancel": "Отмена",
+     "buttonMore": "Еще"
 }

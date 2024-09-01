@@ -12,5 +12,12 @@
     "diary": "Diary",
     "marks": "Marks",
     "schedule": "Schedule",
-    "project": "Project"
+    "project": "Project",
+    "ooops": "Ooops!",
+    "noInternetConnectionDesc": "No Internet Connection found\nCheck your connection",
+    "tryAgain": "Try Again",
+    "diaryIsEmpty": "There are no entries\nin the diary this week.",
+    "hometask": "Hometask",
+    "buttonCancel": "Cancel",
+    "buttonMore": "More"
 }

@@ -1,1 +1,1 @@
-export './providers/user_provider.dart';
+export 'providers/user_provider.dart';

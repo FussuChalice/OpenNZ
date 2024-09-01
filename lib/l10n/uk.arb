@@ -12,5 +12,12 @@
     "diary": "Щоденник",
     "marks": "Оцінки",
     "schedule": "Розклад",
-    "project": "Проєкт"
+    "project": "Проєкт",
+    "ooops": "Ууупс!",
+    "noInternetConnectionDesc": "Немає інтернет з'єднання\nПеревірьте своє підключення",
+    "tryAgain": "Спробувати заново",
+    "diaryIsEmpty": "На цьому тижні в\n щоденнику немає записів.",
+    "hometask": "Домашне завдання",
+    "buttonCancel": "Скасувати",
+     "buttonMore": "Ще"
 }

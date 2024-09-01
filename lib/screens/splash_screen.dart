@@ -1,5 +1,6 @@
 import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/material.dart';
+import 'package:opennz_ua/colors.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -10,12 +11,8 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment(0.03, -1.00),
-            end: Alignment(-0.03, 1),
-            colors: [Color(0xFFAABBC3), Color(0xFFDD8D9E), Color(0xFFA28CBA)],
-          ),
+        decoration: BoxDecoration(
+          gradient: ApplicationColors.backgroundGradient,
         ),
         child: Center(
           child: ClipSmoothRect(
