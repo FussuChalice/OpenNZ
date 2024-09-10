@@ -17,7 +17,14 @@
     "noInternetConnectionDesc": "Нет подключения к интернету\nПроверьте подключение",
     "tryAgain": "Попробовать заново",
     "diaryIsEmpty": "На этой неделе в\n дневнике нет записей.",
+    "marksIsEmpty": "В этом месяце\nоценок нет.",
     "hometask": "Домашнее задание",
     "buttonCancel": "Отмена",
-     "buttonMore": "Еще"
+     "buttonMore": "Еще",
+     "missedLessons": "Пропущеные уроки",
+     "date": "Дата",
+    "lesson": "Предмет",
+    "lessonType": "Тип",
+    "grade": "Оценка"
+
 }

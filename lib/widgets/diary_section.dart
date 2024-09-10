@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:opennz_ua/colors.dart';
@@ -48,9 +49,7 @@ class DiarySection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: 28,
-        ),
+        const Gap(28),
         Text(
           formatDateToTitle(context, date),
           style: TextStyle(
@@ -59,9 +58,7 @@ class DiarySection extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(
-          height: 16,
-        ),
+        const Gap(16),
         Column(
           children: List.generate(
             subjects.length,
@@ -72,9 +69,7 @@ class DiarySection extends StatelessWidget {
                       subjectIndex, subjects.length),
                   subjects: subjects[subjectIndex],
                 ),
-                const SizedBox(
-                  height: 1,
-                ),
+                const Gap(1),
               ],
             ),
           ),

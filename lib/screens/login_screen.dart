@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:opennz_ua/colors.dart';
-import 'package:opennz_ua/consts.dart';
 import 'package:opennz_ua/network.dart';
 import 'package:opennz_ua/screens.dart';
+import 'package:opennz_ua/version.dart';
 import 'package:opennz_ua/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -41,9 +42,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ? Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(
-                          height: 112,
-                        ),
+                        const Gap(112),
                         Text(
                           '${AppLocalizations.of(context)!.versionB} OpenNZ: $APPLICATION_VERSION',
                           style: TextStyle(
@@ -62,9 +61,7 @@ class _LogInScreenState extends State<LogInScreen> {
                             height: 1,
                           ),
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
+                        const Gap(20),
                         Text(
                           AppLocalizations.of(context)!
                               .logInGreetingDescription,
@@ -100,9 +97,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       enableSuggestions: true,
                       autocorrect: false,
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const Gap(20),
                     CustomTextfield(
                       labelText:
                           AppLocalizations.of(context)!.textfieldPassword,
@@ -124,9 +119,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       enableSuggestions: false,
                       autocorrect: false,
                     ),
-                    const SizedBox(
-                      height: 34,
-                    ),
+                    const Gap(34),
                     CustomFilledButton(
                       label: AppLocalizations.of(context)!.logInButton,
                       width: MediaQuery.of(context).size.width,

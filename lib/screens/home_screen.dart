@@ -31,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     List<Widget> views = [
       const DiaryView(),
+      const MarksView(),
     ];
 
     return Scaffold(

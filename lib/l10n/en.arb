@@ -17,7 +17,14 @@
     "noInternetConnectionDesc": "No Internet Connection found\nCheck your connection",
     "tryAgain": "Try Again",
     "diaryIsEmpty": "There are no entries\nin the diary this week.",
+    "marksIsEmpty": "There are no grades\nthis month.",
     "hometask": "Hometask",
     "buttonCancel": "Cancel",
-    "buttonMore": "More"
+    "buttonMore": "More",
+    "missedLessons": "Missed lessons",
+    "date": "Date",
+    "lesson": "Lesson",
+    "lessonType": "Type",
+    "grade": "Grade"
+    
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:opennz_ua/colors.dart';
 import 'dart:io' show Platform;
 
@@ -7,11 +8,13 @@ class CustomAppBar extends StatelessWidget {
       {super.key,
       required this.title,
       this.onCodeBtnPress,
-      this.onSettingsBtnPress});
+      this.onSettingsBtnPress,
+      this.additionalButton});
 
   final String title;
   final void Function()? onCodeBtnPress;
   final void Function()? onSettingsBtnPress;
+  final Widget? additionalButton;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +45,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
                 Row(
                   children: [
+                    additionalButton ?? const Gap(0),
                     IconButton(
                       onPressed: onCodeBtnPress,
                       icon: const Icon(Icons.data_object),

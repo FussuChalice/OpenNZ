@@ -23,17 +23,17 @@ class _DiaryViewState extends State<DiaryView> {
       .subtract(Duration(days: DateTime.now().weekday - 1))
       .add(const Duration(days: 6));
 
-  Future<DiaryResultModel> loadDiary(DateTime startDate, DateTime endDate,
+  Future<DiaryModel> loadDiary(DateTime startDate, DateTime endDate,
       int studentId, String accessToken) async {
     StudentPeriodModel studentPeriod = StudentPeriodModel(
         endDate: endDate,
         startDate: startDate,
         studentId: studentId.toString());
 
-    DiaryResultModel diaryResult =
+    DiaryModel diary =
         await DiaryService().fetchDiary(studentPeriod, accessToken);
 
-    return diaryResult;
+    return diary;
   }
 
   void refreshDiary(BuildContext context) {
@@ -44,7 +44,7 @@ class _DiaryViewState extends State<DiaryView> {
     });
 
     // fetch user access key
-    Provider.of<UserProvider>(context).fetchUser();
+    Provider.of<UserProvider>(context, listen: false).fetchUser();
 
     setState(() {
       _selectedWeekStart = currentWeekStart;
@@ -85,15 +85,15 @@ class _DiaryViewState extends State<DiaryView> {
             },
           ),
           Expanded(
-            child: FutureBuilder<DiaryResultModel>(
+            child: FutureBuilder<DiaryModel>(
               future: loadDiary(
                 _selectedWeekStart,
                 _selectedWeekEnd,
                 userProvider.user.studentId,
                 userProvider.user.accessToken,
               ),
-              builder: (BuildContext context,
-                  AsyncSnapshot<DiaryResultModel> snapshot) {
+              builder:
+                  (BuildContext context, AsyncSnapshot<DiaryModel> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const DataLoadingView();
                 }

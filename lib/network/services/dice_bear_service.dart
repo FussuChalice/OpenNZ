@@ -3,8 +3,6 @@ import 'package:opennz_ua/network.dart';
 class DiceBearService {
   DiceBearService._();
 
-  static const String baseURL = "https://api.dicebear.com/9.x";
-
   static String _getStyle(DiceBearStyle style) {
     switch (style) {
       case DiceBearStyle.adventurer:
@@ -75,6 +73,6 @@ class DiceBearService {
   static String generateAvatarURL(DiceBearStyle style, String seed) {
     String convertedStyle = _getStyle(style);
 
-    return "$baseURL/$convertedStyle/svg?seed=$seed";
+    return "${BaseUrls.DICE_BEAR_API_BASE_URL}/$convertedStyle/png?seed=$seed";
   }
 }

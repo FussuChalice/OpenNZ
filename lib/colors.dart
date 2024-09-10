@@ -10,6 +10,10 @@ class ApplicationColors {
   static Color lightGrey = const Color(0x4C3C3C43);
   static Color darkGrey = const Color(0x993C3C43);
 
+  static Color purpleTable = const Color(0xFFA28CBA);
+  static Color missedLessonsTable = const Color.fromARGB(255, 235, 96, 96);
+  static Color subjectMarksTable = const Color(0xFFB5F2C2);
+
   static LinearGradient backgroundGradient = const LinearGradient(
     begin: Alignment(0.03, -1.00),
     end: Alignment(-0.03, 1),

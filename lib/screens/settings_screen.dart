@@ -1,5 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:opennz_ua/network.dart';
 import 'package:opennz_ua/providers.dart';
 import 'package:provider/provider.dart';
@@ -20,12 +20,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: AppBar(),
       body: ListView(
         children: [
-          SvgPicture.network(
-            DiceBearService.generateAvatarURL(
+          CachedNetworkImage(
+            imageUrl: DiceBearService.generateAvatarURL(
                 DiceBearStyle.identicon, userProvider.user.fio),
             width: 100,
             height: 100,
-          ),
+          )
         ],
       ),
     );

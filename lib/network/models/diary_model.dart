@@ -1,10 +1,10 @@
-class DiaryResultModel {
+class DiaryModel {
   List<Dates>? dates;
   String? errorMessage;
 
-  DiaryResultModel({this.dates, this.errorMessage});
+  DiaryModel({this.dates, this.errorMessage});
 
-  DiaryResultModel.fromJson(Map<String, dynamic> json) {
+  DiaryModel.fromJson(Map<String, dynamic> json) {
     if (json['dates'] != null) {
       dates = <Dates>[];
       json['dates'].forEach((v) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:opennz_ua/colors.dart';
 import 'package:opennz_ua/widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -24,9 +25,7 @@ class _NoInternetConnectionViewState extends State<NoInternetConnectionView> {
           color: ApplicationColors.black,
           size: 80,
         ),
-        const SizedBox(
-          height: 20,
-        ),
+        const Gap(20),
         Text(
           AppLocalizations.of(context)!.ooops,
           style: TextStyle(
@@ -43,9 +42,7 @@ class _NoInternetConnectionViewState extends State<NoInternetConnectionView> {
           ),
           textAlign: TextAlign.center,
         ),
-        const SizedBox(
-          height: 50,
-        ),
+        const Gap(50),
         CustomFilledButton(
           label: AppLocalizations.of(context)!.tryAgain,
           onPressed: widget.onRefreshPressed,
