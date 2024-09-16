@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:gap/gap.dart';
 import 'package:opennz_ua/colors.dart';
 import 'package:opennz_ua/network.dart';
+import 'package:opennz_ua/widgets.dart';
 
 CupertinoAlertDialog missedLessonsDialog(
   BuildContext context,
@@ -21,38 +22,24 @@ CupertinoAlertDialog missedLessonsDialog(
                 color: ApplicationColors.missedLessonsTable,
               ),
               children: [
-                TableCell(
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Text(AppLocalizations.of(context)!.date),
-                  ),
-                ),
-                TableCell(
-                  child: Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Text(AppLocalizations.of(context)!.lesson),
-                  ),
-                ),
+                CustomTableCell(
+                    text: AppLocalizations.of(context)!.date, title: true),
+                CustomTableCell(
+                    text: AppLocalizations.of(context)!.lesson, title: true),
               ],
             ),
             ...List.generate(
               missedLessons.missedLessons!.length,
               (missedLessonIndex) => TableRow(
                 children: [
-                  TableCell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Text(missedLessons
-                          .missedLessons![missedLessonIndex].lessonDate!),
-                    ),
-                  ),
-                  TableCell(
-                    child: Padding(
-                      padding: const EdgeInsets.all(5),
-                      child: Text(missedLessons
-                          .missedLessons![missedLessonIndex].subject!),
-                    ),
-                  ),
+                  CustomTableCell(
+                      text: missedLessons
+                          .missedLessons![missedLessonIndex].lessonDate!,
+                      title: false),
+                  CustomTableCell(
+                      text: missedLessons
+                          .missedLessons![missedLessonIndex].subject!,
+                      title: false),
                 ],
               ),
             ),

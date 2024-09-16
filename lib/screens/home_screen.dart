@@ -32,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Widget> views = [
       const DiaryView(),
       const MarksView(),
+      const TimetableView()
     ];
 
     return Scaffold(

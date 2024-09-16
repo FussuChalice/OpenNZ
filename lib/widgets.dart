@@ -8,3 +8,5 @@ export 'widgets/diary_item.dart';
 export 'widgets/diary_dialog_with_hometask.dart';
 export 'widgets/missed_lessons_dialog.dart';
 export 'widgets/marks_preview_item.dart';
+export 'widgets/custom_table_cell.dart';
+export 'widgets/timetable_date_divider.dart';

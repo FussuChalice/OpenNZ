@@ -14,3 +14,5 @@ export 'network/models/marks_by_period_model.dart' hide Subjects;
 export 'network/services/marks_service.dart';
 export 'network/models/marks_by_subject_model.dart';
 export 'network/models/student_period_with_subject_model.dart';
+export 'network/services/timetable_service.dart';
+export 'network/models/timetable_model.dart' hide Dates, Subjects, Calls;

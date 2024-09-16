@@ -5,6 +5,7 @@ import 'package:opennz_ua/colors.dart';
 import 'package:opennz_ua/network.dart';
 import 'package:opennz_ua/providers.dart';
 import 'package:opennz_ua/views.dart';
+import 'package:opennz_ua/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -42,6 +43,11 @@ class _SubjectMarksScreenState extends State<SubjectMarksScreen> {
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
+
+    Widget _emptyTableCell = const CustomTableCell(
+      text: "",
+      title: false,
+    );
 
     return FutureBuilder(
         future: loadMarksByPeriodWithSubject(
@@ -96,44 +102,20 @@ class _SubjectMarksScreenState extends State<SubjectMarksScreen> {
                           decoration: BoxDecoration(
                               color: ApplicationColors.subjectMarksTable),
                           children: [
-                            TableCell(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: Text(
-                                  AppLocalizations.of(context)!.date,
-                                  style: TextStyle(
-                                    color: ApplicationColors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
+                            CustomTableCell(
+                              text: AppLocalizations.of(context)!.date,
+                              title: true,
+                              textAlign: TextAlign.center,
                             ),
-                            TableCell(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: Text(
-                                  AppLocalizations.of(context)!.lessonType,
-                                  style: TextStyle(
-                                    color: ApplicationColors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
+                            CustomTableCell(
+                              text: AppLocalizations.of(context)!.lessonType,
+                              title: true,
+                              textAlign: TextAlign.center,
                             ),
-                            TableCell(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: Text(
-                                  AppLocalizations.of(context)!.grade,
-                                  style: TextStyle(
-                                    color: ApplicationColors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
+                            CustomTableCell(
+                              text: AppLocalizations.of(context)!.grade,
+                              title: true,
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
@@ -141,71 +123,34 @@ class _SubjectMarksScreenState extends State<SubjectMarksScreen> {
                           snapshot.data!.lessons!.length,
                           (lessonIndex) => TableRow(
                             children: [
-                              TableCell(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5),
-                                  child: Text(
-                                    snapshot.data!.lessons![lessonIndex]
-                                        .lessonDate!,
-                                    style: TextStyle(
-                                      color: ApplicationColors.black,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
+                              CustomTableCell(
+                                text: snapshot
+                                    .data!.lessons![lessonIndex].lessonDate!,
+                                title: false,
+                                textAlign: TextAlign.center,
                               ),
-                              TableCell(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5),
-                                  child: Text(
-                                    snapshot.data!.lessons![lessonIndex]
-                                        .lessonType!,
-                                    style: TextStyle(
-                                      color: ApplicationColors.black,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
+                              CustomTableCell(
+                                text: snapshot
+                                    .data!.lessons![lessonIndex].lessonType!,
+                                title: false,
+                                textAlign: TextAlign.center,
                               ),
-                              TableCell(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(5),
-                                  child: Text(
+                              CustomTableCell(
+                                text:
                                     snapshot.data!.lessons![lessonIndex].mark!,
-                                    style: TextStyle(
-                                      color: ApplicationColors.black,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
+                                title: false,
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),
                         ),
                         ...List.generate(
                           45 - snapshot.data!.lessons!.length,
-                          (rowIndex) => const TableRow(
+                          (rowIndex) => TableRow(
                             children: [
-                              TableCell(
-                                child: Padding(
-                                  padding: EdgeInsets.all(5),
-                                  child: Text(""),
-                                ),
-                              ),
-                              TableCell(
-                                child: Padding(
-                                  padding: EdgeInsets.all(5),
-                                  child: Text(""),
-                                ),
-                              ),
-                              TableCell(
-                                child: Padding(
-                                  padding: EdgeInsets.all(5),
-                                  child: Text(
-                                    "",
-                                  ),
-                                ),
-                              ),
+                              _emptyTableCell,
+                              _emptyTableCell,
+                              _emptyTableCell,
                             ],
                           ),
                         )
