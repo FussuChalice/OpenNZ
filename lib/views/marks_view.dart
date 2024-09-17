@@ -112,10 +112,6 @@ class _MarksViewState extends State<MarksView> {
                 );
               },
             ),
-            onCodeBtnPress: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CodeScreen()));
-            },
             onSettingsBtnPress: () {
               Navigator.push(
                 context,

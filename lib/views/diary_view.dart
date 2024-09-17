@@ -65,10 +65,6 @@ class _DiaryViewState extends State<DiaryView> {
         children: [
           CustomAppBar(
             title: AppLocalizations.of(context)!.diary,
-            onCodeBtnPress: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CodeScreen()));
-            },
             onSettingsBtnPress: () {
               Navigator.push(
                   context,

@@ -101,17 +101,11 @@ class _TimetableViewState extends State<TimetableView> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        gradient: ApplicationColors.backgroundGradient,
-      ),
+      color: ApplicationColors.greyWhite,
       child: Column(
         children: [
           CustomAppBar(
             title: AppLocalizations.of(context)!.schedule,
-            onCodeBtnPress: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const CodeScreen()));
-            },
             onSettingsBtnPress: () {
               Navigator.push(
                 context,
@@ -197,80 +191,75 @@ class _TimetableViewState extends State<TimetableView> {
                       padding: const EdgeInsets.all(0),
                       children: List.generate(
                         snapshot.data!.dates!.length,
-                        (dateIndex) => Expanded(
-                          child: Column(
-                            children: [
-                              TimetableDateDivider(
-                                date: snapshot.data!.dates![dateIndex].date!,
+                        (dateIndex) => Column(
+                          children: [
+                            TimetableDateDivider(
+                              date: snapshot.data!.dates![dateIndex].date!,
+                            ),
+                            Table(
+                              border: TableBorder.all(
+                                color: ApplicationColors.darkGrey,
+                                width: 1,
                               ),
-                              Table(
-                                border: TableBorder.all(
-                                  color: ApplicationColors.darkGrey,
-                                  width: 1,
-                                ),
-                                children: List.generate(
-                                  snapshot
-                                      .data!.dates![dateIndex].calls!.length,
-                                  (callIndex) => TableRow(
-                                    decoration: BoxDecoration(
-                                        color: ApplicationColors.greyWhite),
-                                    children: [
-                                      CustomTableCell(
-                                        text: snapshot.data!.dates![dateIndex]
-                                            .calls![callIndex].callNumber!
-                                            .toString(),
-                                        title: false,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      CustomTableCell(
-                                        text: snapshot
-                                            .data!
-                                            .dates![dateIndex]
-                                            .calls![callIndex]
-                                            .subjects![0]
-                                            .subjectName!,
-                                        title: false,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      CustomTableCell(
-                                        text: snapshot
-                                            .data!
-                                            .dates![dateIndex]
-                                            .calls![callIndex]
-                                            .subjects![0]
-                                            .teacher!
-                                            .name!,
-                                        title: false,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      CustomTableCell(
-                                        text: snapshot
-                                            .data!
-                                            .dates![dateIndex]
-                                            .calls![callIndex]
-                                            .subjects![0]
-                                            .room!,
-                                        title: false,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      CustomTableCell(
-                                        text: snapshot.data!.dates![dateIndex]
-                                            .calls![callIndex].timeStart!,
-                                        title: false,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      CustomTableCell(
-                                        text: snapshot.data!.dates![dateIndex]
-                                            .calls![callIndex].timeEnd!,
-                                        title: false,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                    ],
-                                  ),
+                              children: List.generate(
+                                snapshot.data!.dates![dateIndex].calls!.length,
+                                (callIndex) => TableRow(
+                                  decoration: BoxDecoration(
+                                      color: ApplicationColors.greyWhite),
+                                  children: [
+                                    CustomTableCell(
+                                      text: snapshot.data!.dates![dateIndex]
+                                          .calls![callIndex].callNumber!
+                                          .toString(),
+                                      title: false,
+                                      textAlign: TextAlign.center,
+                                      verticalAlignment:
+                                          TableCellVerticalAlignment.middle,
+                                    ),
+                                    CustomTableCell(
+                                      text: snapshot
+                                          .data!
+                                          .dates![dateIndex]
+                                          .calls![callIndex]
+                                          .subjects![0]
+                                          .subjectName!,
+                                      title: false,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    CustomTableCell(
+                                      text: snapshot
+                                          .data!
+                                          .dates![dateIndex]
+                                          .calls![callIndex]
+                                          .subjects![0]
+                                          .teacher!
+                                          .name!,
+                                      title: false,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    CustomTableCell(
+                                      text: snapshot.data!.dates![dateIndex]
+                                          .calls![callIndex].subjects![0].room!,
+                                      title: false,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    CustomTableCell(
+                                      text: snapshot.data!.dates![dateIndex]
+                                          .calls![callIndex].timeStart!,
+                                      title: false,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    CustomTableCell(
+                                      text: snapshot.data!.dates![dateIndex]
+                                          .calls![callIndex].timeEnd!,
+                                      title: false,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

@@ -23,4 +23,6 @@ class ApplicationColors {
   static Color markBad = const Color(0xFF690505);
   static Color markNotBad = const Color(0xFF695905);
   static Color markGood = const Color(0xFF05691B);
+
+  static Color logOutButtonRed = const Color.fromARGB(255, 205, 44, 44);
 }
