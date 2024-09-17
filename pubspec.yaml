@@ -1,6 +1,6 @@
 name: opennz_ua
 publish_to: 'none'
-version: 0.1.0
+version: 0.1.1
 
 environment:
   sdk: '>=3.4.1 <4.0.0'
@@ -25,6 +25,7 @@ dependencies:
   figma_squircle: ^0.5.3
   flutter_svg: 2.0.10
   cached_network_image: ^3.4.1
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
