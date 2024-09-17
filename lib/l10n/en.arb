@@ -32,5 +32,7 @@
     "startTime": "Start time",
     "endTime": "End time",
     "account": "Account",
-    "logOut": "Log Out"
+    "logOut": "Log Out",
+    "projectAndLicenses": "Project & Licenses",
+    "licenses": "Licenses"
 }

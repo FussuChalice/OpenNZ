@@ -4,7 +4,6 @@ import 'package:opennz_ua/colors.dart';
 import 'package:opennz_ua/providers.dart';
 import 'package:opennz_ua/views.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -49,9 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
               icon: const Icon(Icons.calendar_month),
               label: AppLocalizations.of(context)!.schedule),
-          BottomNavigationBarItem(
-              icon: const Icon(Icons.open_in_browser),
-              label: AppLocalizations.of(context)!.project),
         ],
         backgroundColor: ApplicationColors.black,
         currentIndex: _selectedPageIndex,
@@ -60,15 +56,10 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedFontSize: 10,
         selectedFontSize: 10,
         iconSize: 20,
-        onTap: (value) async {
-          if (value == 3) {
-            // TODO: Change to project url
-            await launchUrl(Uri.parse("https://google.com"));
-          } else {
-            setState(() {
-              _selectedPageIndex = value;
-            });
-          }
+        onTap: (value) {
+          setState(() {
+            _selectedPageIndex = value;
+          });
         },
       ),
     );
