@@ -22,6 +22,8 @@ class MarksView extends StatefulWidget {
 class _MarksViewState extends State<MarksView> {
   DateTime _selectedMonth = DateTime.now();
 
+  bool forceUpdate = false;
+
   Future<MissedLessonsModel> loadMissedLessons(DateTime startDate,
       DateTime endDate, int studentId, String accessToken) async {
     StudentPeriodModel studentPeriod = StudentPeriodModel(
@@ -42,8 +44,8 @@ class _MarksViewState extends State<MarksView> {
         startDate: startDate,
         studentId: studentId.toString());
 
-    MarksByPeriodModel marks =
-        await MarksService().getMarksByPeriod(studentPeriod, accessToken);
+    MarksByPeriodModel marks = await MarksService()
+        .getMarksByPeriod(studentPeriod, accessToken, forceUpdate);
 
     return marks;
   }
@@ -60,6 +62,18 @@ class _MarksViewState extends State<MarksView> {
 
     setState(() {
       _selectedMonth = currentMonth;
+    });
+  }
+
+  void updataMarks() {
+    setState(() {
+      forceUpdate = true;
+    });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        forceUpdate = false;
+      });
     });
   }
 
@@ -120,6 +134,15 @@ class _MarksViewState extends State<MarksView> {
                 ),
               );
             },
+            secondAdditionalButton: IconButton(
+              icon: Icon(
+                Icons.update,
+                color: ApplicationColors.black,
+              ),
+              onPressed: () {
+                updataMarks();
+              },
+            ),
           ),
           MonthSelecter(
             onChange: (date) => {

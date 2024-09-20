@@ -39,6 +39,8 @@ class _TimetableViewState extends State<TimetableView> {
     });
   }
 
+  bool forceUpdate = false;
+
   Future<TimetableModel> loadTimetable(DateTime startDate, DateTime endDate,
       int studentId, String accessToken) async {
     StudentPeriodModel studentPeriod = StudentPeriodModel(
@@ -46,8 +48,8 @@ class _TimetableViewState extends State<TimetableView> {
         startDate: startDate,
         studentId: studentId.toString());
 
-    TimetableModel timetable =
-        await TimetableService().getTimetable(studentPeriod, accessToken);
+    TimetableModel timetable = await TimetableService()
+        .getTimetable(studentPeriod, accessToken, forceUpdate);
 
     return timetable;
   }
@@ -56,6 +58,18 @@ class _TimetableViewState extends State<TimetableView> {
       const EdgeInsets.only(top: 5, bottom: 5, left: 5, right: 10);
 
   final int _maxTableRowsCount = 128;
+
+  void updataTimetable() {
+    setState(() {
+      forceUpdate = true;
+    });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        forceUpdate = false;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,6 +128,13 @@ class _TimetableViewState extends State<TimetableView> {
                 ),
               );
             },
+            secondAdditionalButton: IconButton(
+              icon: const Icon(Icons.update),
+              color: ApplicationColors.black,
+              onPressed: () {
+                updataTimetable();
+              },
+            ),
           ),
           WeekSelecter(
             onChange: (DateTime startOfWeek, DateTime endOfWeek) {

@@ -4,17 +4,31 @@ import 'package:opennz_ua/network.dart';
 import 'package:http/http.dart' as http;
 
 class MarksService {
-  Future<MarksByPeriodModel> getMarksByPeriod(
-      StudentPeriodModel studentPeriod, String accessToken) async {
-    final response = await http.post(
-      Uri.parse("${BaseUrls.NZ_UA_API_BASE_URL}/schedule/student-performance"),
-      headers: {
-        "Authorization": "Bearer $accessToken",
-      },
-      body: studentPeriod.toJson(),
-    );
+  final _networkCacheManager = NetworkCacheManager();
 
-    return MarksByPeriodModel.fromJson(jsonDecode(response.body));
+  Future<MarksByPeriodModel> getMarksByPeriod(StudentPeriodModel studentPeriod,
+      String accessToken, bool forceUpdate) async {
+    final dataRequest = studentPeriod.toJson().toString();
+
+    if (await _networkCacheManager.checkCacheExistence(dataRequest, 'marks') &&
+        !forceUpdate) {
+      return MarksByPeriodModel.fromJson(jsonDecode(
+          await _networkCacheManager.readCache(dataRequest, 'marks')));
+    } else {
+      final response = await http.post(
+        Uri.parse(
+            "${BaseUrls.NZ_UA_API_BASE_URL}/schedule/student-performance"),
+        headers: {
+          "Authorization": "Bearer $accessToken",
+        },
+        body: studentPeriod.toJson(),
+      );
+
+      await _networkCacheManager.writeCache(
+          dataRequest, response.body, 'marks');
+
+      return MarksByPeriodModel.fromJson(jsonDecode(response.body));
+    }
   }
 
   Future<MarksBySubjectModel> getMarksBySubject(

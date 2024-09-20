@@ -23,6 +23,8 @@ class _DiaryViewState extends State<DiaryView> {
       .subtract(Duration(days: DateTime.now().weekday - 1))
       .add(const Duration(days: 6));
 
+  bool forceUpdate = false;
+
   Future<DiaryModel> loadDiary(DateTime startDate, DateTime endDate,
       int studentId, String accessToken) async {
     StudentPeriodModel studentPeriod = StudentPeriodModel(
@@ -30,8 +32,8 @@ class _DiaryViewState extends State<DiaryView> {
         startDate: startDate,
         studentId: studentId.toString());
 
-    DiaryModel diary =
-        await DiaryService().fetchDiary(studentPeriod, accessToken);
+    DiaryModel diary = await DiaryService()
+        .fetchDiary(studentPeriod, accessToken, forceUpdate);
 
     return diary;
   }
@@ -48,6 +50,18 @@ class _DiaryViewState extends State<DiaryView> {
 
     setState(() {
       _selectedWeekStart = currentWeekStart;
+    });
+  }
+
+  void updataDiary() {
+    setState(() {
+      forceUpdate = true;
+    });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {
+        forceUpdate = false;
+      });
     });
   }
 
@@ -71,6 +85,14 @@ class _DiaryViewState extends State<DiaryView> {
                   MaterialPageRoute(
                       builder: (context) => const SettingsScreen()));
             },
+            secondAdditionalButton: IconButton(
+                onPressed: () {
+                  updataDiary();
+                },
+                icon: Icon(
+                  Icons.update,
+                  color: ApplicationColors.black,
+                )),
           ),
           WeekSelecter(
             onChange: (DateTime startOfWeek, DateTime endOfWeek) {

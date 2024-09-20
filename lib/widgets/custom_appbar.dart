@@ -8,11 +8,13 @@ class CustomAppBar extends StatelessWidget {
       {super.key,
       required this.title,
       this.onSettingsBtnPress,
-      this.additionalButton});
+      this.additionalButton,
+      this.secondAdditionalButton});
 
   final String title;
   final void Function()? onSettingsBtnPress;
   final Widget? additionalButton;
+  final Widget? secondAdditionalButton;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +46,7 @@ class CustomAppBar extends StatelessWidget {
                 Row(
                   children: [
                     additionalButton ?? const Gap(0),
+                    secondAdditionalButton ?? const Gap(0),
                     IconButton(
                       onPressed: onSettingsBtnPress,
                       icon: const Icon(Icons.settings_outlined),

@@ -100,6 +100,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
               )
             ],
           ),
+          SettingsSection(tiles: [
+            SettingsTile(
+              title: Text("Clear cache"),
+              onPressed: (context) async {
+                await NetworkCacheManager().clearCache();
+              },
+            )
+          ]),
           SettingsSection(
               title: Text(AppLocalizations.of(context)!.projectAndLicenses),
               tiles: [
