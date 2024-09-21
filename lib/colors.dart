@@ -14,6 +14,8 @@ class ApplicationColors {
   static Color missedLessonsTable = const Color.fromARGB(255, 235, 96, 96);
   static Color subjectMarksTable = const Color(0xFFB5F2C2);
 
+  static Color textDivider = const Color(0xFF192fbf);
+
   static LinearGradient backgroundGradient = const LinearGradient(
     begin: Alignment(0.03, -1.00),
     end: Alignment(-0.03, 1),

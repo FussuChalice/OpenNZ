@@ -33,6 +33,7 @@
     "endTime": "End time",
     "account": "Account",
     "logOut": "Log Out",
-    "projectAndLicenses": "Project & Licenses",
+    "aboutProject": "About Project",
+    "settings": "Settings",
     "licenses": "Licenses"
 }

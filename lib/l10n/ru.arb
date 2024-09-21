@@ -33,6 +33,7 @@
     "endTime": "Время конца",
     "account": "Аккаунт",
     "logOut": "Выйти",
-    "projectAndLicenses": "Проект и Лицензии",
+    "aboutProject": "Про проект",
+    "settings": "Настройки",
     "licenses": "Лицензии"
 }

@@ -10,3 +10,5 @@ export 'widgets/missed_lessons_dialog.dart';
 export 'widgets/marks_preview_item.dart';
 export 'widgets/custom_table_cell.dart';
 export 'widgets/timetable_date_divider.dart';
+export 'widgets/custom_circle_avatar.dart';
+export 'widgets/text_divider.dart';
