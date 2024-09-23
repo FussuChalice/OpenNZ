@@ -35,5 +35,8 @@
     "logOut": "Log Out",
     "aboutProject": "About Project",
     "settings": "Settings",
-    "licenses": "Licenses"
+    "licenses": "Licenses",
+    "additionaly": "Additionaly",
+    "cleanCache": "Clean cache"
+    
 }

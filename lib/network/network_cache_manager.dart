@@ -41,7 +41,7 @@ class NetworkCacheManager {
     NetworkCache newCache = NetworkCache(
       data: data,
       expired: DateTime.now().add(
-        const Duration(hours: 2),
+        const Duration(days: 1),
       ),
     );
 

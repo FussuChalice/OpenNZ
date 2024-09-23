@@ -35,5 +35,8 @@
     "logOut": "Выйти",
     "aboutProject": "Про проект",
     "settings": "Настройки",
-    "licenses": "Лицензии"
+    "licenses": "Лицензии",
+    "additionaly": "Дополнительно",
+    "deleteCacheAfter": "Удалять кеш через",
+    "cleanCache": "Очистить кеш"
 }

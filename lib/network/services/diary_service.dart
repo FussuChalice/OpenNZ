@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:opennz_ua/extensions.dart';
 import 'package:opennz_ua/network.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,7 +8,8 @@ class DiaryService {
 
   Future<DiaryModel> fetchDiary(StudentPeriodModel studentPeriod,
       String accessToken, bool forceUpdate) async {
-    final dataRequest = studentPeriod.toJson().toString();
+    final dataRequest =
+        studentPeriod.toJson().changeValueOfKey("student_id", "0").toString();
     if (await _networkCacheManager.checkCacheExistence(dataRequest, 'diary') &&
         !forceUpdate) {
       return DiaryModel.fromJson(jsonDecode(
