@@ -18,3 +18,5 @@ export 'network/services/timetable_service.dart';
 export 'network/models/timetable_model.dart' hide Dates, Subjects, Calls;
 export 'network/network_cache_manager.dart';
 export 'network/network_cache.dart';
+export 'network/models/github_release_model.dart';
+export 'network/services/github_releases_service.dart';

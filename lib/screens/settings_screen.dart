@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:opennz_ua/colors.dart';
-import 'package:opennz_ua/network/network_cache_manager.dart';
+import 'package:opennz_ua/network.dart';
 import 'package:opennz_ua/providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:opennz_ua/version.dart';
@@ -47,7 +47,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ListTile(
             title: Text(
                 "${AppLocalizations.of(context)!.versionB}: $APPLICATION_VERSION"),
-            onTap: () {},
+            onTap: () async {
+              List<GithubReleaseModel> releases = await GithubReleasesService()
+                  .getListOfReleases("FussuChalice", "OpenNZ");
+
+              GithubReleaseModel latestRelease = releases[0];
+              if (latestRelease.tagName != APPLICATION_VERSION) {
+                await launchUrl(Uri.parse(latestRelease.htmlUrl!));
+              } else {
+                if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content:
+                          Text(AppLocalizations.of(context)!.noUpdatesFound),
+                    ),
+                  );
+                }
+              }
+            },
           ),
           const Divider(),
           ListTile(

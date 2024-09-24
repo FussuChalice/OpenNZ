@@ -37,6 +37,7 @@
     "settings": "Settings",
     "licenses": "Licenses",
     "additionaly": "Additionaly",
-    "cleanCache": "Clean cache"
+    "cleanCache": "Clean cache",
+    "noUpdatesFound": "No updates found"
     
 }

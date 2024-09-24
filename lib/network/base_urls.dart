@@ -6,4 +6,5 @@ class BaseUrls {
   // For debug mode use url : http://localhost:4050/v1
   static const String NZ_UA_API_BASE_URL = "https://api-mobile.nz.ua/v1";
   static const String DICE_BEAR_API_BASE_URL = "https://api.dicebear.com/9.x";
+  static const String GITHUB_API_BASE_URL = "https://api.github.com";
 }

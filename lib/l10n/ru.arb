@@ -38,5 +38,6 @@
     "licenses": "Лицензии",
     "additionaly": "Дополнительно",
     "deleteCacheAfter": "Удалять кеш через",
-    "cleanCache": "Очистить кеш"
+    "cleanCache": "Очистить кеш",
+    "noUpdatesFound": "Обновлений не найдено"
 }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:opennz_ua/colors.dart';
+import 'package:opennz_ua/network.dart';
 import 'package:opennz_ua/providers/user_provider.dart';
 import 'package:opennz_ua/screens.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
