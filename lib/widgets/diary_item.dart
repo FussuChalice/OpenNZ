@@ -37,7 +37,7 @@ class _DiaryItemState extends State<DiaryItem> {
   }
 
   Color getMarkColor(String mark) {
-    if (mark == "Н") {
+    if (mark == "Н" || mark == "хв") {
       return ApplicationColors.black;
     }
 
